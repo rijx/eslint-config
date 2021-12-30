@@ -1,0 +1,25 @@
+name: Create minor release
+on:
+  push:
+    branches:
+      - 'master'
+      - 'releases/**'
+jobs:
+  create_release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Determine next version
+        run: echo "::set-output name=version::$(./.github/scripts/get-next-version.sh ${{ github.ref_name }})"
+        id: next_version
+      - name: Next version
+        run: echo ${{ steps.next_version.outputs.version }}
+      - name: Create release
+        if: ${{ steps.next_version.outputs.version != '' }}
+        run: |
+          gh release create ${{ steps.next_version.outputs.version }} \
+            --target ${{ github.ref_name }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}

@@ -1,0 +1,18 @@
+{
+  "name": "eslint-config-rijx",
+  "description": "RIJX flavored ESLint config",
+  "keywords": [
+    "eslint",
+    "eslintconfig"
+  ],
+  "peerDependencies": {
+    "eslint": ">= 3",
+    "eslint-plugin-import": ">= 2",
+    "eslint-plugin-prettier": ">= 3",
+    "prettier": ">= 2"
+  },
+  "devDependencies": {
+    "eslint": "^8.5.0",
+    "prettier": "^2.5.1"
+  }
+}

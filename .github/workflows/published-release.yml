@@ -1,0 +1,24 @@
+name: Publish to npm
+on:
+  release:
+    types: [published]
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16.x"
+          registry-url: "https://registry.npmjs.org"
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+      - name: Publish to npm
+        run: |
+          yarn publish --new-version $(npx semver ${{ github.event.release.tag_name }}) \
+            --no-git-tag-version --no-commit-hooks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - run: ./.github/scripts/create-release-branch.sh ${{ github.event.release.tag_name }}
