@@ -1,6 +1,6 @@
 module.exports = {
   extends: ["eslint:recommended"],
-  plugins: ["prettier", "import"],
+  plugins: ["prettier", "import", "filenames"],
   parserOptions: {
     sourceType: "module",
     ecmaVersion: 2018,
@@ -54,5 +54,6 @@ module.exports = {
         bundledDependencies: true,
       },
     ],
+    "filenames/match-exported": "error",
   },
 };

@@ -10,12 +10,14 @@
   },
   "peerDependencies": {
     "eslint": ">= 3",
+    "eslint-plugin-filenames": ">= 1",
     "eslint-plugin-import": ">= 2",
     "eslint-plugin-prettier": ">= 3",
     "prettier": ">= 2"
   },
   "devDependencies": {
     "eslint": "^8.5.0",
+    "eslint-plugin-filenames": "^1.3.2",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "^2.5.1"
