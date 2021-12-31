@@ -1,6 +1,6 @@
-# Content Backend
+# RIJX ESLint config
 
-API first open source content management system (CMS). Powered by Node, React, GraphQL and RethinkDB.
+RIJX flavored ESLint config.
 
 ## How to use
 
