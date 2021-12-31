@@ -44,9 +44,7 @@ module.exports = {
     // Use the Webpack module rules instead of putting them in your
     // require statements.
     "import/no-webpack-loader-syntax": "error",
-    "import/no-self-import": "error",
     "import/no-cycle": "error",
-    "import/no-useless-path-segments": "error",
     "import/no-extraneous-dependencies": [
       "error",
       {

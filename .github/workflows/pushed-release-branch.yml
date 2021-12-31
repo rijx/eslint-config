@@ -2,10 +2,25 @@ name: Create minor release
 on:
   push:
     branches:
-      - 'master'
-      - 'releases/**'
+      - "master"
+      - "releases/**"
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16.x"
+          registry-url: "https://registry.npmjs.org"
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+      - name: Lint own files
+        run: yarn run lint
   create_release:
+    needs: [lint]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
