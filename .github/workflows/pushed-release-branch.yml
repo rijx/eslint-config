@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - "master"
-      - "releases/**"
+      - "release/**"
 jobs:
   lint:
     runs-on: ubuntu-latest
