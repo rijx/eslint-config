@@ -23,4 +23,5 @@ jobs:
             --no-git-tag-version --no-commit-hooks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - run: ./.github/scripts/create-release-branch.sh ${{ github.event.release.tag_name }}
+      - name: Create release branch
+        run: ./.github/scripts/create-release-branch.sh ${{ github.event.release.tag_name }}

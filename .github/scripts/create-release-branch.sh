@@ -11,7 +11,7 @@ fi
 
 BRANCH_NAME="$(npx semver $VERSION | awk -F. '{ print "release/" $1 "." $2 }')"
 
-if [ ! -z "$(git ls-remote --heads origin)" ]; then
+if [ ! -z "$(git ls-remote --heads origin | grep refs/heads/$BRANCH_NAME)" ]; then
   exit
 fi
 
