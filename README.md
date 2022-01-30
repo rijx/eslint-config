@@ -7,7 +7,7 @@ RIJX flavored ESLint config.
 Run the following command:
 
 ```
-yarn add --dev eslint eslint-config-rijx eslint-plugin-import prettier eslint-plugin-prettier
+yarn add --dev eslint eslint-config-rijx eslint-plugin-import prettier eslint-plugin-prettier eslint-plugin-filenames
 ```
 
 Then put the following in `.eslintrc.js`:
