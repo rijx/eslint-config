@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - 'master'
-      - 'releases/**'
+      - 'release/**'
 jobs:
   create_release:
     runs-on: ubuntu-latest
