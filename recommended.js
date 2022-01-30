@@ -56,5 +56,6 @@ module.exports = {
     ],
     "filenames/match-exported": "error",
     "dot-notation": "error",
+    "no-warning-comments": "error",
   },
 };
